@@ -35,7 +35,7 @@ def verifyLink(link):
                 for chunk in res.iter_content(100000):
                     downFile.write(chunk)
                 downFile.close()
-            except requests.exceptions.HTTPError as e:
+            except Exception as e:
                 if res.status_code == 404:
                     print('Broken link: ' + l)
                 else:
